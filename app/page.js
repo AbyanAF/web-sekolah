@@ -111,15 +111,20 @@ export default async function HomePage() {
                 <div className="berita-image">
                   <img
                     src={
-                      item.image 
-                        ? item.image.startsWith("/")
+                      item.image
+                        ? item.image.startsWith("http")
                           ? item.image
-                          : `/uploads/${item.image}`
+                          : `https://web-sekolah-production-46c5.up.railway.app${
+                              item.image.startsWith("/")
+                                ? item.image
+                                : `/uploads/${item.image}`
+                            }`
                         : "/placeholder.jpg"
                     }
                     alt={item.title}
                   />
                 </div>
+
 
                 <div className="berita-body">
                   <span className="berita-tag">
