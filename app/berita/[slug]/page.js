@@ -19,19 +19,14 @@ export default async function DetailBerita({ params }) {
           <img
             src={
               berita.image
-                ? berita.image.startsWith("http")
+                ? berita.image.startsWith("/")
                   ? berita.image
-                  : `https://web-sekolah-production-46c5.up.railway.app${
-                      berita.image.startsWith("/")
-                        ? berita.image
-                        : `/uploads/${berita.image}`
-                    }`
+                  : `/uploads/${berita.image}`
                 : "/placeholder.jpg"
             }
             alt={berita.title}
           />
         </div>
-
 
         {/* ===== CONTENT ===== */}
         <div className="detail-container">
